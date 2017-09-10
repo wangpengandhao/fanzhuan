@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr=[1,2,3,4,5,['a','b','c']];
+		var result = copy(arr);
+		console.log(result);
+		function copy(arr){
+			var arr1=[];
+			for(var i=0;i<arr.length;i++){
+				if(arr[i] == 'object'){
+					arr1[i]=copy(arr[i]);
+				}else{
+					arr1[i]=arr[i];
+				}
+			}
+			return arr1;
+		}
+	</script>
+</body>
+</html>
